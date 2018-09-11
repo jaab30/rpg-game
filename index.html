@@ -60,24 +60,24 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                    <p>Your Character..!</p>
+                    <p class="textClean">Your Character..!</p>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                    <div><p>Enemies available to attack</p></div> 
+                    <div><p class="textClean">Enemies available to attack</p></div> 
             </div>
         </div>
         <div id="enemies" class="row">
         </div>
         
         <div class="row">
-                    <div><p>Fight Section</p></div>
+                    <div><p class="textClean">Fight Section</p></div>
                     
-                    <div><button id="attackBtn">Attack...!</button></div>
+                    <div class="clearButton"><button id="attackBtn">Attack...!</button></div>
         </div>
         <div class="row">
-                    <div><p>Defender</p></div>
+                    <div><p class="textClean">Defender</p></div>
         </div>
         <div id="defender" class="row">
         </div>
@@ -122,12 +122,13 @@
         defender = "",
         attackerHPLeft = "",
         defenderHPLeft = "",
-        counterDefender = "",
+        counterDefender = 3,
         counterAttacker = 0,
 
         attackerSelection = true,
         opponentSelection = true,
         battleReady = false
+        
         
     function healthPointsText(){
     $(".soloHP").text(characters[0].health_points);
@@ -162,6 +163,7 @@
             battleReady = true;
 
         }
+        $("#defenderMessage1").text("")
     })
         
          
@@ -186,8 +188,6 @@
                 healthPointsText()
 
 
-            }
-
 
             // when attcker hits 0 or less
             if (attacker.health_points <= 0){
@@ -208,6 +208,49 @@
 
 
             }
+
+            // when defender hits 0 or less
+               if (defender.health_points <= 0){
+            //reset battle var
+                battleReady = false
+            // remove character
+                $( "#defender" ).empty();
+            // printing message to screen
+                $("#defenderMessage1").text("You have defeated " + defender.name + ". You can select another enemy")
+
+                 $("#defenderMessage2").text("")
+                opponentSelection = true;
+                counterDefender--
+                console.log(counterDefender)
+
+            }
+                if (counterDefender === 0){
+            //reset battle var
+                battleReady = false
+            // remove character
+                $( "#defender" ).empty();
+            // printing message to screen
+                $("#defenderMessage1").text("You won..!!... GAME OVER...!")
+            // create button to reset game
+                $("#defenderMessage2").html("<button id='reset'>Restart</button>");
+            // restart on click, refresh page
+                $("#reset").on("click", function(){
+                        location.reload()
+                });
+                // clear all text
+                $(".textClean").text("")
+                // remove attck button
+                 $( ".clearButton" ).empty();
+
+
+
+
+                }
+            }
+
+
+            
+
 
         })
 
