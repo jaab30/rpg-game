@@ -9,50 +9,43 @@
         <!-- Added link to the jQuery Library -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- reset css -->
-        <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css" /> -->
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
         <!-- Added a link to Bootstrap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- link to font -->
+        <link href="https://fonts.googleapis.com/css?family=Peralta|Vollkorn:400,600,700,900" rel="stylesheet">
         <!-- link to css -->
-        <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" /> -->
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
-        <style>
-        .images {
-            margin:30px;
-
-        }
-
-        /* #enemies{
-            float: left;
-
-        } */
-           
-        </style>
 
 </head>
 
 <body>
     <header class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
-                    <h1> RPG Game </h1>
+            <div class="col-sm-12 align-items-center">
+                    <h1> Seinfeld Battle Game</h1>
+                    <img src="assets/images/logo_300.png" alt="Seinfeld Logo" class="logo">
             </div>
         </div>
     </header>
     <main class="container-fluid">
-        <div class="row">
-                <div id="solo" class="col-sm-2 images m-0 p-0 pick" value="0">
-                    <div><p>Han Solo</p>
-                    <img src="assets/images/solo.jpg"><p class="soloHP"></p></div>
+        <div class="row pics">
+                <div class="col-sm-3 mr-2">
+                    </div>
+                <div id="seinfeld" class="col-sm-1 mr-5 ml-3 p-0 pick" value="0">
+                    <div class="images"><p>Seinfeld</p>
+                    <img src="assets/images/seinfeld_150.png" alt="Seinfeld" Logo" class="charImg"></div><div><p class="seinfeldHP hpText"></p></div>
                 </div>
-                <div id="evil" class="col-sm-2 images m-0 p-0 pick" value="1">
-                    <div><p>Evil Man</p>
-                    <img src="assets/images/evil.jpg"><p class="evilHP"></p></div>
+                <div id="elaine" class="col-sm-1 mr-5 ml-3 p-0 pick" value="1">
+                    <div class="images"><p>Elaine</p>
+                    <img src="assets/images/elaine.png" alt="Elaine" class="charImg"></div><div><p class="elaineHP hpText"></p></div>
                 </div>
-                <div id="darth" class="col-sm-2 images m-0 p-0 pick" value="2">
-                    <div><p>Darth Vader</p><img src="assets/images/darth.jpg"><p class="darthHP"></p></div>
+                <div id="george" class="col-sm-1 mr-5 ml-3 p-0 pick" value="2">
+                    <div class="images"><p>George</p><img src="assets/images/george_160.png" alt="George" class="charImg"></div><div><p class="georgeHP hpText"></p></div>
                 </div>
-                <div id="yoda" class="col-sm-2 images m-0 p-0 pick" value="3">
-                    <div><p>Yoda</p><img src="assets/images/yoda.jpg"><p class="yodaHP"></p></div>
+                <div id="kramer" class="col-sm-1 mr-5 ml-3 mt-0 mb-0 p-0 pick" value="3">
+                    <div class="images"><p>Kramer</p><img src="assets/images/kramer-150b.png" alt="Kramer" class="charImg"></div><div></div><p class="kramerHP hpText"></p>
                 </div>
                 <div class="col-sm-4">
                 </div>
@@ -60,29 +53,29 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                    <p class="textClean">Your Character..!</p>
+                    <p class="textPick"></p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                    <div><p class="textClean">Enemies available to attack</p></div> 
+        <div class="row bottom-container">
+            <div class="col-sm-3")>
             </div>
+            <div class="col-sm-2")>
+                <div id="attacker" class="fighters">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="clearButton"><button id="attackBtn">Attack...!</button></div>
+                <div id="defenderMessage1" class="fightMessage"></div>
+                <div id="defenderMessage2" class="fightMessage"></div>
+            </div>
+            <div class="col-sm-2")>
+                <div id="defender" class="fighters">
+                </div>
+            </div>
+            <div class="col-sm-3")>
+            </div>
+
         </div>
-        <div id="enemies" class="row">
-        </div>
-        
-        <div class="row">
-                    <div><p class="textClean">Fight Section</p></div>
-                    
-                    <div class="clearButton"><button id="attackBtn">Attack...!</button></div>
-        </div>
-        <div class="row">
-                    <div><p class="textClean">Defender</p></div>
-        </div>
-        <div id="defender" class="row">
-        </div>
-        <div id="defenderMessage1"></div>
-        <div id="defenderMessage2"></div>
     </main>
    
     <script>
@@ -91,65 +84,71 @@
         //set up all vars and objects
 
        var characters = [solo = {
-                            "name": "Hans Solo",
+                            "name": "Seinfeld",
                             "health_points": 100,
                             "attack_power": 6,
                             "counter_attack": 6
                             
                         },
-                        evil = {
-                            "name": "Evil",
+                        maul = {
+                            "name": "Elaine",
                             "health_points": 120,
                             "attack_power": 12,
                             "counter_attack": 12
                         },
                         darth = {
-                            "name": "Darth Vader",
+                            "name": "George",
                             "health_points": 160,
                             "attack_power": 18,
                             "counter_attack": 18
                             
                         },
                         yoda = {
-                            "name": "Yoda",
+                            "name": "Kramer",
                             "health_points": 180,
                             "attack_power": 24,
                             "counter_attack": 24
                         }];
 
-
+    // set initial var values
     var attacker = "",
         defender = "",
-        attackerHPLeft = "",
-        defenderHPLeft = "",
         counterDefender = 3,
         counterAttacker = 0,
-
         attackerSelection = true,
         opponentSelection = true,
-        battleReady = false
+        battleReady = false,
+    //sound samples
+        intro = new Audio("assets/sounds/seinfeld.mp3"),
+        end = new Audio("assets/sounds/funky_sound.mp3")
         
-        
+    // text top show health point for each character
     function healthPointsText(){
-    $(".soloHP").text(characters[0].health_points);
-    $(".evilHP").text(characters[1].health_points);
-    $(".darthHP").text(characters[2].health_points);
-    $(".yodaHP").text(characters[3].health_points);
+    $(".seinfeldHP").text(characters[0].health_points);
+    $(".elaineHP").text(characters[1].health_points);
+    $(".georgeHP").text(characters[2].health_points);
+    $(".kramerHP").text(characters[3].health_points);
     }
+
+    $(".textPick").text("Pick your character..!");
     
-    
-       
-       
     // on click a character, detach and move other character to the enemies area
         
-    $(".pick").on("click", function(){
+    $(".pick").one("click", function(){
         if (attackerSelection === true && opponentSelection === true){
-            $(this).removeClass("pick");
-            $(".pick").appendTo("#enemies");
+            // $(this).removeClass("pick");
+            // $(".pick").appendTo("#enemies");
+            // $( this ).off( event );
+
+             $(this).appendTo("#attacker");
+            
             var attackerValue = ($(this).attr("value"))
             attackerValue = parseInt(attackerValue);
             attacker = characters[attackerValue];
             attackerSelection = false;
+            $(".textPick").text("Pick your opponent..!");
+            //sound sample
+            intro.play();
         } 
 
         //  // move from enemy area to defender
@@ -161,14 +160,14 @@
             defender = characters[defenderValue];
             opponentSelection = false;
             battleReady = true;
+            $(".textPick").text("Fight..!");
 
         }
+        
         $("#defenderMessage1").text("")
     })
         
-         
         // on click attack subtract hp points from defender and counter attack points from character
-
 
         $("#attackBtn").on("click", function(){
             if (battleReady) {
@@ -187,27 +186,31 @@
                 // updating text for Health Points per character
                 healthPointsText()
 
-
-
             // when attcker hits 0 or less
-            if (attacker.health_points <= 0){
+                if (attacker.health_points <= 0){
             //reset battle var
                 battleReady = false
             //reset attacker Health points to 0
                 attacker.health_points = 0;
+
+                attackerSelection = false;
+                opponentSelection = false;
             // printing message to screen
-                $("#defenderMessage1").text("You have been defeated... GAME OVER...!")
+                $("#defenderMessage1").text("GAME OVER...!")
+                $(".textPick").text("You have been defeated...");
             // create button to reset game
                 $("#defenderMessage2").html("<button id='reset'>Restart</button>");
             // restart on click, refresh page
                 $("#reset").on("click", function(){
                         location.reload()
                 });
+                // remove attck button
+                $(".clearButton").empty();
             // updating text for Health Points per character
-            healthPointsText()
-
-
-            }
+                healthPointsText()
+                //sound sample
+                end.play();
+                }
 
             // when defender hits 0 or less
                if (defender.health_points <= 0){
@@ -216,21 +219,24 @@
             // remove character
                 $( "#defender" ).empty();
             // printing message to screen
-                $("#defenderMessage1").text("You have defeated " + defender.name + ". You can select another enemy")
+                $("#defenderMessage1").text("You have defeated " + defender.name + ".")
+
+                $(".textPick").text("Pick another opponent..!");
 
                  $("#defenderMessage2").text("")
                 opponentSelection = true;
                 counterDefender--
                 console.log(counterDefender)
 
-            }
+                }
                 if (counterDefender === 0){
             //reset battle var
                 battleReady = false
             // remove character
                 $( "#defender" ).empty();
             // printing message to screen
-                $("#defenderMessage1").text("You won..!!... GAME OVER...!")
+                $("#defenderMessage1").text("GAME OVER...!")
+                $(".textPick").text("You won..!!");
             // create button to reset game
                 $("#defenderMessage2").html("<button id='reset'>Restart</button>");
             // restart on click, refresh page
@@ -240,121 +246,18 @@
                 // clear all text
                 $(".textClean").text("")
                 // remove attck button
-                 $( ".clearButton" ).empty();
-
-
-
-
+                 $(".clearButton").empty();
+                 // sound sample
+                 end.play();
                 }
+                
             }
-
-
-            
-
-
         })
 
         healthPointsText()
 
-    
-
-
-
-
-
-
-
-        //  $(".soloChoice").on("click", function(){           
-        //     $("#solo").removeClass("pick");
-        //     $(".pick").appendTo("#enemies");
-        //     $('div').attr('id','solo2');
-        //     $(".pick").removeClass("pick").addClass("attacker");
-        //     $(".evilChoice").removeClass("evilChoice").addClass("evil2");
-        //     $(".darthChoice").removeClass("darthChoice").addClass("darth2");
-        //     $(".yodaChoice").removeClass("yodaChoice").addClass("yoda2");
-        // //     $("#darth").appendTo("#enemies");
-        // //     $("#yoda").appendTo("#enemies");
-        // })
-        
-        // $(".evilChoice").on("click", function(){
-        //     $("#evil").removeClass("pick");
-        //     $(".pick").appendTo("#enemies");
-        //     $(".pick").removeClass("pick").addClass("attacker");
-        //     $(".soloChoice").removeClass("soloChoice").addClass("solo2");
-        //     $(".darthChoice").removeClass("darthChoice").addClass("darth2");
-        //     $(".yodaChoice").removeClass("yodaChoice").addClass("yoda2");
-        //     // $("#darth").appendTo("#enemies");
-        //     // $("#yoda").appendTo("#enemies");
-        // })
-
-        //  $(".darthChoice").on("click", function(){
-        //     $("#darth").removeClass("pick");
-        //     $(".pick").appendTo("#enemies");
-        //     $(".pick").removeClass("pick").addClass("attacker");
-        //     $(".soloChoice").removeClass("soloChoice").addClass("solo2");
-        //     $(".evilChoice").removeClass("evilChoice").addClass("evil2");
-        //     $(".yodaChoice").removeClass("yodaChoice").addClass("yoda2");
-        //     // $("#evil").appendTo("#enemies");
-        //     // $("#yoda").appendTo("#enemies");
-        // })
-
-        // $(".yodaChoice").on("click", function(){
-        //     $("#yoda").removeClass("pick");
-        //     $(".pick").appendTo("#enemies");
-        //     $(".pick").removeClass("pick").addClass("attacker");
-        //     $(".soloChoice").removeClass("soloChoice").addClass("solo2");
-        //     $(".evilChoice").removeClass("evilChoice").addClass("evil2");
-        //     $(".darthChoice").removeClass("darthChoice").addClass("darth2");
-        //     // $("#evil").appendTo("#enemies");
-        //     // $("#darth").appendTo("#enemies");
-        // })
-
-        //  // move from enemy area to defender
-
-      
-        //  $("#solo").on("click", function(){           
-        //     $("#solo").appendTo("#defender");
-        // })
-       
-
-
-
-
-
-
-
-
-
-
-      
-
-       
-
-        // increase character's HP attack points by its numbwer everytim it attacks
-
-        // if character points equals or less than 0, you loose
-
-
-        // if defender points equals or less than zero, remove defender
-
-         // message if attck button is clicked an no defender
-
-        // on click enemy, move to defender area
-
-
-
-
-
-
-
-    
 })
-
-       
-        
-        
-        
-        
+   
     </script>
 
     <!-- bootstrap code -->
