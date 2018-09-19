@@ -119,7 +119,7 @@
         opponentSelection = true,
         battleReady = false,
     //sound samples
-        intro = new Audio("assets/sounds/seinfeld.mp3"),
+        intro = new Audio("assets/sounds/seinfeldloopfinal.mp3"),
         end = new Audio("assets/sounds/funky_sound.mp3")
         
     // text top show health point for each character
@@ -149,6 +149,7 @@
             $(".textPick").text("Pick your opponent..!");
             //sound sample
             intro.play();
+            intro.loop=true;
         } 
 
         //  // move from enemy area to defender
@@ -209,7 +210,9 @@
             // updating text for Health Points per character
                 healthPointsText()
                 //sound sample
+                
                 end.play();
+                intro.pause();
                 }
 
             // when defender hits 0 or less
@@ -248,7 +251,9 @@
                 // remove attck button
                  $(".clearButton").empty();
                  // sound sample
+                 
                  end.play();
+                 intro.pause();
                 }
                 
             }
