@@ -7,4 +7,12 @@ Each character has 3 attributes: Health Points, Attack Points and Counter Attack
 When user press the “Fight” button, the Attacker’s attack power increases by its base attack power.
 When the user presses the “Fight” button, Attacker will damage the defender. Defender will lose Health Points. Also, the Defender will damage the Attacker. The attacker will also lose Health Points.
 If Attacker lose all Health Points, the game ends. If the Defender lose all Health Points, the attacker will have a choice of picking a new opponent. Game ends when attacker beats all opponents.
+<br>
+<br>
+Web Tools: HTML5, CSS3, Bootstrap, JavaScript, jQuery.
+<br>
+<br>
+https://jaab30.github.io/rpg-game/
+<br>
+<br>
 Enjoy…!
