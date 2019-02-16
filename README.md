@@ -16,3 +16,10 @@ https://jaab30.github.io/rpg-game/
 <br>
 <br>
 Enjoy…!
+<br>
+<br>
+
+<img src="https://user-images.githubusercontent.com/40499942/52906294-e8ec9980-3216-11e9-9375-927aa8837390.png" alt="rpg game image" width="400px" height="320px"><br><br>
+<img src="https://user-images.githubusercontent.com/40499942/52906295-e8ec9980-3216-11e9-8a43-336d0a36e45c.png" alt="rpg game image" width="400px" height="320px"><br><br>
+<img src="https://user-images.githubusercontent.com/40499942/52906296-e8ec9980-3216-11e9-955f-2c6ea775bf56.png" alt="rpg game image" width="400px" height="320px"><br><br>
+
